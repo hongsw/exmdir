@@ -22,6 +22,15 @@ defmodule Exmdir.CLI do
     System.halt(0)
   end
 
+  @doc """
+  파싱합니다.
+
+  ## Examples
+
+      iex> .parse_args(" --help")
+      "help"
+
+  """
   def parse_args(args) do
     {opts, word, _} =
       args
@@ -41,6 +50,7 @@ defmodule Exmdir.CLI do
   def formatting(fileObject) do
     Kernel.inspect(fileObject)
   end
+
   def response({opts, word}) do
     cond do 
       opts[:halt] == true -> 
