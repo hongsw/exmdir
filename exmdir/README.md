@@ -21,12 +21,12 @@ and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/exmdir](https://hexdocs.pm/exmdir).
 
 
-## Testing
+## Testing & Coveralls
 ```command
 MIX_ENV=test mix coveralls
 ```
 
-## Debug
+## Debugging
 ```command
 iex -S mix exmdir
 ```
