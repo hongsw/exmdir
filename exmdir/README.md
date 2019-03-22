@@ -1,4 +1,5 @@
 # Exmdir
+linux command 'ls' writhin elixir, ms-dos's mdir style
 
 **TODO: Add description**
 
