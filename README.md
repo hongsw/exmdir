@@ -1,3 +1,9 @@
+# exmdir 
+linux command 'ls' writhin elixir, ms-dos's mdir style
+
+
+
+
 # hongseungwoo-ls
 
 홍승우님 코딩 테스트 저장소 (README 파일은 필요에 따라 추가 / 수정 / 삭제하셔도 무방합니다.)
