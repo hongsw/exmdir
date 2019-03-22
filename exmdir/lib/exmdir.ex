@@ -1,19 +1,10 @@
-defmodule Exmdir do
-  @moduledoc """
-  Documentation for Exmdir.
-  """
+defmodule Mix.Tasks.Exmdir do
+  use Mix.Task
+  @moduledoc false
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Exmdir.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
   
+  @shortdoc "prepend stdin with args string"
+  def run(argv) do
+    Exmdir.CLI.main(argv)
+  end
 end
