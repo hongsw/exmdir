@@ -1,6 +1,6 @@
 defmodule Exmdir.CLI do
   import File
-
+  require Logger
   @moduledoc """
   Documentation for Exmdir.
   """
@@ -18,6 +18,7 @@ defmodule Exmdir.CLI do
     args
     |> parse_args
     |> response
+    |> IO.puts
     System.halt(0)
   end
 
@@ -25,22 +26,21 @@ defmodule Exmdir.CLI do
     {opts, word, _} =
       args
       |> OptionParser.parse(switches: [upcase: :boolean, halt: :boolean])
-    if opts[:halt], do: System.halt(1), else: {opts, List.to_string(word)}
-    {opts, word}
+    Logger.info(inspect({opts, List.to_string(word)}) )
+    {opts, List.to_string(word)}
   end
-
-  def response({opts, "Hello"}) do
-    response({opts, "World"})
-    |> IO.puts
-  end
-
-  # def response({opts, word}) do
-  #   if opts[:upcase], do: String.upcase(word), else: word
-  #   |> IO.puts
-  # end
 
   def response({opts, word}) do
-    File.ls!() |> Enum.all?(fn x -> IO.puts(x) end)
+    cond do 
+      opts[:halt] == true -> 
+        System.halt(1)
+      opts[:help] == true -> 
+        "usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]"
+      word == "" ->
+        File.ls!() |> Enum.all?(fn x -> IO.puts(x) end)
+      # true ->
+      #   IO.puts('true')
+    end
   end
 
 end

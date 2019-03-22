@@ -5,6 +5,7 @@ defmodule ExmdirTest do
   doctest Mix.Tasks.Exmdir
 
   test "greets the world in escript" do
-    assert ["Hello"] |> CLI.parse_args |> CLI.response == "World"
+    assert ["Hello"] |> CLI.parse_args |> CLI.response == :ok
   end
+
 end

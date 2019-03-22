@@ -67,3 +67,8 @@ iex -S mix exmdir
 mix docs
 open ./doc/index.html
 ```
+
+## Build
+```command
+MIX_ENV=prod  mix escript.build
+```
