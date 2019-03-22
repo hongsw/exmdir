@@ -1,6 +1,9 @@
 image: trenpixster/elixir:latest
 
 before_script:
+  - ls
+  - ls config/
+  - ls config/dev.exs
   - mix deps.get
 
 mix:
