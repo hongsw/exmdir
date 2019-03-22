@@ -1,8 +1,8 @@
 image: elixir:latest
 
 before_script:
-  - mix deps.get
   - mix local.hex --force
+  - mix deps.get
 
 mix:
   script:
