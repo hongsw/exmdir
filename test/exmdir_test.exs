@@ -8,9 +8,6 @@ defmodule ExmdirTest do
     test "Test --help" do
       assert ["--help"] |> CLI.parse_args |> CLI.response == "usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]"
     end
-    test "Should fail" do
-      assert false
-    end
   end
 
   test "formatting" do
