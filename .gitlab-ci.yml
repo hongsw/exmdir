@@ -1,6 +1,8 @@
 image: trenpixster/elixir:latest
 
 before_script:
+  - ls
+  - cwd
   - mix deps.get
 
 mix:
