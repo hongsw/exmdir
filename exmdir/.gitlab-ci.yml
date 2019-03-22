@@ -1,0 +1,8 @@
+image: trenpixster/elixir:latest
+
+before_script:
+  - mix deps.get
+
+mix:
+  script:
+  - mix test
