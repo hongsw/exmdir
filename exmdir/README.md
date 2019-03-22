@@ -20,3 +20,19 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/exmdir](https://hexdocs.pm/exmdir).
 
+
+## Testing
+```command
+MIX_ENV=test mix coveralls
+```
+
+## Debug
+```command
+iex -S mix exmdir
+```
+
+## Document Generation
+```command
+mix docs
+open ./doc/index.html
+```
