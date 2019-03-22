@@ -1,4 +1,17 @@
 defmodule Exmdir.CLI do
+  @moduledoc """
+  Documentation for Exmdir.
+  """
+
+  @doc """
+  Hello world.
+
+  ## Examples
+
+      iex> Exmdir.hello()
+      :world
+
+  """
   def main(args \\ []) do
     args
     |> parse_args
@@ -6,17 +19,18 @@ defmodule Exmdir.CLI do
     |> IO.puts()
   end
 
-  defp parse_args(args) do
+  def parse_args(args) do
     {opts, word, _} =
       args
-      |> OptionParser.parse(switches: [upcase: :boolean])
-
-    {opts, List.to_string(word)}
+      |> OptionParser.parse(switches: [upcase: :boolean, halt: :boolean])
+    if opts[:halt], do: System.halt(1), else: {opts, List.to_string(word)}
+    # System.stop(1)
+    
   end
 
-  defp response({opts, "Hello"}), do: response({opts, "World"})
+  def response({opts, "Hello"}), do: response({opts, "World"})
 
-  defp response({opts, word}) do
+  def response({opts, word}) do
     if opts[:upcase], do: String.upcase(word), else: word
   end
 
